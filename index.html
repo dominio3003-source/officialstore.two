@@ -92,6 +92,90 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
 .sticky-cta .cta small{display:none}
 @media (min-width:901px){.sticky-cta{display:none}}
 @media (max-width:768px){.cta{width:90%;padding:17px 22px;font-size:16px;margin:0 auto;display:block}header.preview-header h1{font-size:25px}.content{padding:48px 16px}.content > section{margin-bottom:48px}}
+
+/* ===== NOVAS REGRAS RESPONSIVAS (sem alterar HTML) ===== */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+  .hero { min-height: 70vh; padding: 40px 18px; }
+  .hero .cta { width: auto; max-width: 90%; }
+  .verdict-panel { padding: 30px 20px; }
+  .verdict-col { padding: 6px 14px; }
+}
+
+/* Celulares grandes e pequenos */
+@media (max-width: 600px) {
+  .hero { min-height: auto; padding: 30px 14px 40px; }
+  .hero-badge { font-size: 11px; padding: 6px 14px; }
+  .video-container { border-radius: var(--r-md); margin-bottom: 18px; }
+  .cta { width: 100%; max-width: 100%; padding: 15px 20px; font-size: 15px; display: block; margin: 0 auto; }
+  .cta strong { font-size: 17px; }
+  .cta small { font-size: 11px; }
+  .trust-row { gap: 10px; font-size: 11px; margin-top: 16px; }
+  .trust-item { font-size: 11px; }
+
+  header.preview-header { padding: 28px 16px 22px; }
+  header.preview-header h1 { font-size: 22px; }
+  header.preview-header p { font-size: 13px; }
+
+  .content { padding: 32px 12px; }
+  .content > section { margin-bottom: 36px; }
+  .sec-head h2 { font-size: 22px; }
+  .intro-text { font-size: 15px; }
+
+  .cards { grid-template-columns: 1fr; gap: 12px; }
+  .card { padding: 16px; }
+  .card .ic { font-size: 20px; }
+  .card strong { font-size: 14px; }
+  .card p { font-size: 13px; }
+
+  .product-image-container { max-width: 100%; padding: 0 10px; }
+  .product-image-container .badge { font-size: 10px; padding: 6px 12px; top: -8px; right: -6px; }
+
+  .verdict-panel { padding: 20px 14px; border-radius: var(--r-md); }
+  .verdict-grid { grid-template-columns: 1fr; gap: 16px; }
+  .verdict-col { padding: 0; }
+  .verdict-col + .verdict-col { border-left: 0; border-top: 1px solid var(--edge); padding-top: 16px; margin-top: 4px; }
+  .verdict-col h3 { font-size: 13px; }
+  .verdict-col li { font-size: 13px; }
+  .verdict-mid { font-size: 10px; padding: 5px 14px; top: -14px; white-space: nowrap; }
+
+  .reviews-grid { grid-template-columns: 1fr; gap: 14px; }
+  .review-card { padding: 16px; }
+  .review-card .quote { font-size: 13px; }
+
+  .faq-item summary { font-size: 13px; padding: 14px 16px; }
+  .faq-item .a { font-size: 13px; padding: 0 16px 14px; }
+
+  .sticky-cta { padding: 8px 12px; gap: 8px; }
+  .sticky-cta .info strong { font-size: 12px; }
+  .sticky-cta .info span { font-size: 10px; }
+  .sticky-cta .cta { padding: 9px 14px; font-size: 12px; }
+  .sticky-cta .cta strong { font-size: 12px; }
+
+  footer { padding: 30px 16px 20px; }
+  footer .legal { font-size: 10.5px; }
+}
+
+/* Celulares muito pequenos (até 400px) */
+@media (max-width: 400px) {
+  .urgency-bar { font-size: 11px; padding: 6px 8px; gap: 6px; }
+  .urgency-bar .countdown { font-size: 11px; padding: 2px 7px; }
+  .hero { padding: 20px 10px 30px; }
+  .cta { padding: 13px 16px; font-size: 13px; }
+  .cta strong { font-size: 15px; }
+  .cta small { font-size: 10px; }
+  header.preview-header h1 { font-size: 19px; }
+  .sec-head h2 { font-size: 20px; }
+  .intro-text { font-size: 14px; }
+  .card { padding: 14px; }
+  .card .ic { font-size: 18px; }
+  .verdict-panel { padding: 16px 10px; }
+  .verdict-col li { font-size: 12px; }
+  .review-card .quote { font-size: 12px; }
+  .faq-item summary { font-size: 12px; padding: 12px 14px; }
+  .sticky-cta .cta { padding: 7px 12px; font-size: 11px; }
+}
 </style>
 
 </head>
