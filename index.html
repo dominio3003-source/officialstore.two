@@ -24,6 +24,22 @@ h1,h2,h3{font-family:var(--font-display);letter-spacing:-0.01em;margin:0}
 .returning-bar{background:linear-gradient(90deg,#0E5C3E,#137A50);color:#fff;text-align:center;padding:11px 14px;font-size:13px;font-weight:600;display:none;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
 .returning-bar.show{display:flex}
 .returning-bar .pill{background:rgba(255,255,255,.16);padding:3px 10px;border-radius:99px;font-size:11.5px;font-weight:700}
+.cookie-overlay{position:fixed;inset:0;z-index:300;background:rgba(15,20,30,.55);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px}
+.cookie-overlay.show{display:flex}
+.cookie-card{background:#fff;border-radius:20px;width:100%;max-width:var(--cookie-w, 460px);padding:32px 30px 28px;position:relative;text-align:center;box-shadow:0 calc(var(--cookie-shadow,60px)*0.35) calc(var(--cookie-shadow,60px)*0.9) var(--cookie-shadow-color, rgba(0,0,0,.35));animation:cookiePopIn .35s var(--ease)}
+@keyframes cookiePopIn{from{opacity:0;transform:translateY(14px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+.cookie-card .close-x{position:absolute;top:16px;right:18px;background:none;border:none;cursor:pointer;font-size:20px;color:#9AA3B2;line-height:1;padding:4px}
+.cookie-card .close-x:hover{color:var(--ink)}
+.cookie-card h2{font-size:21px;font-weight:800;margin-bottom:14px;padding-right:10px}
+.cookie-card p{font-size:14px;line-height:1.6;color:var(--ink-soft);margin:0 0 24px}
+.cookie-card .actions{display:flex;gap:12px;flex-wrap:wrap}
+.cookie-card .actions button{flex:1;min-width:140px;padding:13px 18px;border-radius:12px;font-weight:700;font-size:14px;cursor:pointer;transition:transform .15s,filter .15s;font-family:var(--font-body)}
+.cookie-card .actions button:hover{transform:translateY(-1px)}
+.cookie-btn-accept{background:var(--ink);color:#fff;border:1px solid var(--ink)}
+.cookie-btn-accept:hover{filter:brightness(1.15)}
+.cookie-btn-decline{background:#fff;color:var(--ink);border:1px solid var(--edge)}
+.cookie-btn-decline:hover{background:var(--cloud)}
+@media (max-width:480px){.cookie-card{padding:26px 22px 22px;border-radius:18px}.cookie-card .actions{flex-direction:column}.cookie-card .actions button{min-width:0}}
 .urgency-bar .countdown{font-family:var(--font-mono);background:rgba(255,255,255,.12);padding:3px 9px;border-radius:99px;font-size:12.5px}
 header.preview-header{background:radial-gradient(120% 140% at 50% 0%, #16213A 0%, var(--ink) 60%);color:#fff;text-align:center;padding:38px 20px 30px}
 header.preview-header h1{font-size:clamp(22px,5vw,30px);font-weight:800}
@@ -117,7 +133,7 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
 <div class="hero" id="hero">
   <span class="hero-badge">⭐⭐⭐⭐ 4.9/5 · 2,000+ Verified Customers</span>
   <div class="video-container"><iframe src="https://www.youtube.com/embed/6JWwKXPfcHU?autoplay=1&mute=1&loop=1&playlist=6JWwKXPfcHU&controls=1&showinfo=0&rel=0&modestbranding=1&disablekb=1&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></div>
-  <a class="cta js-buy-link" href="https://storeprime.pythonanywhere.com/0j8l5A4i">
+  <a class="cta js-buy-link" href="https://storeprime.pythonanywhere.com/0j8l5A4i" data-base-href="https://storeprime.pythonanywhere.com/0j8l5A4i">
     <small>I WANT MY</small>
     <strong>PROSTAVIVE REVIEWS 2025 💪 NOW</strong>
   </a>
@@ -130,9 +146,9 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
   </section>
   <section>
     <div class="sec-head"><h2>💥 Exclusive Benefits</h2></div>
-    <div class="cards"><div class="card"><span class="ic">✦</span>✅Multifactorial Approach: The formula is not based on a single &quot;miracle ingredient&quot;. It combines anti-inflammatory agents, DHT reducers (a testosterone derivative that causes prostate growth) and specific nutrients, offering a more complete approach.</div>
+    <div class="cards"><div class="card"><span class="ic">✦</span>✅ Multifactorial Approach: The formula is not based on a single &quot;miracle ingredient&quot;. It combines anti-inflammatory agents, DHT reducers (a testosterone derivative that causes prostate growth) and specific nutrients, offering a more complete approach.</div>
 <div class="card"><span class="ic">✦</span>✅ Focus on &quot;Cleansing&quot; and Tissue Recovery: The manufacturer emphasizes that the formula helps the body &quot;expel&quot; toxins accumulated in the prostate and nourish the organ&#39;s tissues, promoting its long-term health, not just masking the symptoms.</div>
-<div class="card"><span class="ic">✦</span>✅Ingredients with Good Research History: Components such as Saw Palmetto (Serenoa repens), Pygeum Africanum and Urtica Root are widely studied and recognized by the natural medicine community for prostate health.</div>
+<div class="card"><span class="ic">✦</span>✅ Ingredients with Good Research History: Components such as Saw Palmetto (Serenoa repens), Pygeum Africanum and Urtica Root are widely studied and recognized by the natural medicine community for prostate health.</div>
 <div class="card"><span class="ic">✦</span>✅ Enhances skin and inflammatory response</div>
 <div class="card"><span class="ic">✦</span>✅ 100% natural formula</div></div>
   </section>
@@ -157,7 +173,7 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
 <div class="card"><span class="ic">🌱</span><strong>Tomato Extract (Lycopene)</strong><p>A potent antioxidant that protects prostate cells from oxidative damage.</p></div></div>
   </section>
   <div style="text-align:center">
-    <a class="cta js-buy-link" href="https://storeprime.pythonanywhere.com/0j8l5A4i">
+    <a class="cta js-buy-link" href="https://storeprime.pythonanywhere.com/0j8l5A4i" data-base-href="https://storeprime.pythonanywhere.com/0j8l5A4i">
       <small>I WANT MY</small>
       <strong>PROSTAVIVE REVIEWS 2025 💪 NOW</strong>
     </a>
@@ -178,7 +194,7 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
         <img src="https://uploads.onecompiler.io/43v37pq3s/1782687958718/homem-sorridente-de-tiro-medio-posando.jpg" class="avatar" onerror="this.src='https://i.pravatar.cc/150?img=1'">
         <div><div style="font-weight:700;font-size:14px">David P.</div><div class="verified">✔ Verified Buyer</div></div>
       </div>
-      <div style="margin-top:12px"><span style="color:#ffb100;font-size:15px;letter-spacing:1px">★★★★☆</span><div class="quote">"“I was waking up 4-5 times a night to use the bathroom. After using ProstaVive for a month, I’m down to once per night, sometimes none! It has truly changed my life.”&quot;"</div></div>
+      <div style="margin-top:12px"><span style="color:#ffb100;font-size:15px;letter-spacing:1px">★★★★☆</span><div class="quote">"I was waking up 4-5 times a night to use the bathroom. After using ProstaVive for a month, I’m down to once per night, sometimes none! It has truly changed my life."</div></div>
     </article>
 
     <article class="review-card">
@@ -186,15 +202,7 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
         <img src="https://uploads.onecompiler.io/43v37pq3s/1782687974830/customer3.jpg" class="avatar" onerror="this.src='https://i.pravatar.cc/150?img=1'">
         <div><div style="font-weight:700;font-size:14px">William R.</div><div class="verified">✔ Verified Buyer</div></div>
       </div>
-      <div style="margin-top:12px"><span style="color:#ffb100;font-size:15px;letter-spacing:1px">★★★★★</span><div class="quote">"&quot;I&#39;ve been using Max Boost for a few weeks now, and I&#39;m honestly amazed at how much it has improved my vitality and energy.&quot;"</div></div>
-    </article>
-
-    <article class="review-card">
-      <div class="meta">
-        <img src="https://uploads.onecompiler.io/43v37pq3s/1782687981466/customer2.jpg" class="avatar" onerror="this.src='https://i.pravatar.cc/150?img=1'">
-        <div><div style="font-weight:700;font-size:14px">Robert M.</div><div class="verified">✔ Verified Buyer</div></div>
-      </div>
-      <div style="margin-top:12px"><span style="color:#ffb100;font-size:15px;letter-spacing:1px">★★★★☆</span><div class="quote">"I was feeling tired all the time... After using Max Boost for a month, my energy levels are through the roof!&quot;"</div></div>
+      <div style="margin-top:12px"><span style="color:#ffb100;font-size:15px;letter-spacing:1px">★★★★★</span><div class="quote">"I&#39;ve been using Max Boost for a few weeks now, and I&#39;m honestly amazed at how much it has improved my vitality and energy."</div></div>
     </article>
 
     <article class="review-card">
@@ -203,6 +211,14 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
         <div><div style="font-weight:700;font-size:14px">Jonathan</div><div class="verified">✔ Verified Buyer</div></div>
       </div>
       <div style="margin-top:12px"><span style="color:#ffb100;font-size:15px;letter-spacing:1px">★★★★★</span><div class="quote">"My biggest issue wasn’t just waking up at night, but the constant ‘rushing’ feeling during the day—I couldn’t go to the grocery store without mapping out where the restroom was. After about three weeks on ProstaVive, that sudden urgency practically disappeared. I can finally go for a long drive or watch a full movie at the theater without anxiety. It gave me my freedom back...."</div></div>
+    </article>
+
+    <article class="review-card">
+      <div class="meta">
+        <img src="https://uploads.onecompiler.io/43v37pq3s/1782687981466/customer2.jpg" class="avatar" onerror="this.src='https://i.pravatar.cc/150?img=1'">
+        <div><div style="font-weight:700;font-size:14px">Robert M.</div><div class="verified">✔ Verified Buyer</div></div>
+      </div>
+      <div style="margin-top:12px"><span style="color:#ffb100;font-size:15px;letter-spacing:1px">★★★★★</span><div class="quote">"I was feeling tired all the time... After using Max Boost for a month, my energy levels are through the roof!"</div></div>
     </article>
 
     <article class="review-card">
@@ -235,12 +251,24 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
 </footer>
 <div class="sticky-cta" id="stickyCta">
   <div class="info"><strong>ProstaVive Reviews 2025 💪</strong><span>Limited time offer</span></div>
-  <a class="cta js-buy-link" href="https://storeprime.pythonanywhere.com/0j8l5A4i"><strong>GET IT NOW</strong></a>
+  <a class="cta js-buy-link" href="https://storeprime.pythonanywhere.com/0j8l5A4i" data-base-href="https://storeprime.pythonanywhere.com/0j8l5A4i"><strong>GET IT NOW</strong></a>
 </div>
+
+  <div class="cookie-overlay" id="cookieOverlay">
+    <div class="cookie-card" id="cookieCard" style="--cookie-w:460px;--cookie-shadow:60px;--cookie-shadow-color:rgba(0,0,0,.4)">
+      <button class="close-x" id="cookieCloseX" aria-label="Fechar">✕</button>
+      <h2>Cookie Settings</h2>
+      <p>We use cookies and similar technologies to help personalize content, tailor and measure ads, and provide a better experience. By clicking accept, you agree to this as described in our Cookie Policy.</p>
+      <div class="actions">
+        <button class="cookie-btn-accept" id="cookieAcceptBtn">Yes, I accept</button>
+        <button class="cookie-btn-decline" id="cookieDeclineBtn">No, I do not accept</button>
+      </div>
+    </div>
+  </div>
 
   <script>
     (function(){
-      var deadline = new Date("2026-07-01T23:59").getTime();
+      var deadline = new Date("2026-07-03T23:59").getTime();
       var el = document.getElementById('countdownEl');
       function pad(n){ return String(n).padStart(2,'0'); }
       function tick(){
@@ -293,7 +321,7 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
       }
       if(qs){
         document.querySelectorAll('.js-buy-link').forEach(function(a){
-          a.href = appendQuery(a.getAttribute('href'), qs);
+          a.href = appendQuery(a.getAttribute('data-base-href') || a.getAttribute('href'), qs);
         });
       }
       var bar = document.getElementById('returningBar');
@@ -308,6 +336,69 @@ footer .legal{max-width:640px;margin:18px auto 0;font-size:11.5px;line-height:1.
       var b = hero.getBoundingClientRect().bottom;
       if(b < 0) sticky.classList.add('show'); else sticky.classList.remove('show');
     });
+  })();
+</script>
+<script>
+  (function(){
+    var CONSENT_COOKIE = 'px_consent';
+    var DAYS = 60;
+    function setCookie(name,value,days){
+      try{
+        var d=new Date(); d.setTime(d.getTime()+days*24*60*60*1000);
+        document.cookie = name+"="+encodeURIComponent(value)+";expires="+d.toUTCString()+";path=/;SameSite=Lax";
+      }catch(e){}
+    }
+    function getCookie(name){
+      try{
+        var m = document.cookie.match(new RegExp('(?:^|; )'+name+'=([^;]*)'));
+        return m ? decodeURIComponent(m[1]) : null;
+      }catch(e){ return null; }
+    }
+    function readStored(name){ try{ var c=getCookie(name); if(c) return c; return localStorage.getItem(name); }catch(e){ return null; } }
+    function writeStored(name,value,days){ setCookie(name,value,days); try{ localStorage.setItem(name,value); }catch(e){} }
+
+    var overlay = document.getElementById('cookieOverlay');
+    if(!overlay) return;
+    var alreadyDecided = !!readStored(CONSENT_COOKIE);
+    if(!alreadyDecided){ overlay.classList.add('show'); }
+
+    function activateTrackingNow(){
+      // Re-run the same attribution capture used by the page's tracking system,
+      // so accepting OR declining both confirm/refresh the click-ID + UTM cookie.
+      try{
+        var TRACK_KEYS = ['gclid','fbclid','ttclid','msclkid','utm_source','utm_medium','utm_campaign','utm_term','utm_content'];
+        var ATTR_COOKIE = 'px_attribution', VISIT_COOKIE = 'px_visited';
+        var stored = {};
+        try{ stored = JSON.parse(readStored(ATTR_COOKIE) || '{}'); }catch(e){ stored = {}; }
+        var params = new URLSearchParams(window.location.search);
+        var fresh = {};
+        TRACK_KEYS.forEach(function(k){ if(params.has(k)) fresh[k] = params.get(k); });
+        var merged = Object.assign({}, stored, fresh);
+        writeStored(ATTR_COOKIE, JSON.stringify(merged), DAYS);
+        writeStored(VISIT_COOKIE, '1', DAYS);
+        var qs = new URLSearchParams(merged).toString();
+        if(qs){
+          document.querySelectorAll('.js-buy-link').forEach(function(a){
+            var href = a.getAttribute('data-base-href') || a.getAttribute('href');
+            if(!href || href.trim()==='' || href.trim()==='#' || href.trim().indexOf('#')===0) return;
+            a.href = href + (href.indexOf('?') > -1 ? '&' : '?') + qs;
+          });
+        }
+      }catch(e){}
+    }
+
+    function decide(accepted){
+      writeStored(CONSENT_COOKIE, accepted ? 'accepted' : 'declined', DAYS);
+      activateTrackingNow();
+      overlay.classList.remove('show');
+    }
+
+    var acceptBtn = document.getElementById('cookieAcceptBtn');
+    var declineBtn = document.getElementById('cookieDeclineBtn');
+    var closeX = document.getElementById('cookieCloseX');
+    if(acceptBtn) acceptBtn.addEventListener('click', function(){ decide(true); });
+    if(declineBtn) declineBtn.addEventListener('click', function(){ decide(false); });
+    if(closeX) closeX.addEventListener('click', function(){ decide(false); });
   })();
 </script>
 </body>
